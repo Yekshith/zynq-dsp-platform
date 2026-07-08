@@ -1,0 +1,51 @@
+# ---- Vivado ----
+*.jou
+*.log
+*.str
+*.dcp
+*.bit
+*.bin
+*.ltx
+*.wdb
+*.pb
+.Xil/
+fpga/*.cache/
+fpga/*.hw/
+fpga/*.ip_user_files/
+fpga/*.runs/
+fpga/*.sim/
+fpga/*.gen/
+fpga/*.srcs/bd/*/hw_handoff/
+fpga/*.xpr
+vivado*.backup*
+hs_err_pid*.log
+
+# ---- Vitis ----
+sw/**/Debug/
+sw/**/Release/
+sw/**/_ide/
+sw/**/.metadata/
+*.elf
+*.xsa
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# ---- cocotb / sim ----
+sim_build/
+results.xml
+*.vcd
+*.ghw
+*.fst
+vunit_out/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
