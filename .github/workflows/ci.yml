@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Build CI image
+        run: docker build -t zynq-ci ci/
+
+      - name: Run model tests
+        run: docker run --rm -v "$PWD:/work" zynq-ci pytest model/ -v
