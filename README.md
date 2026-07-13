@@ -1,6 +1,6 @@
 # Zynq DSP Validation Platform
 
-[![CI](https://github.com/Yekshith/zynq-dsp-platform/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Yekshith/zynq-dsp-platform/actions/workflows/ci.yml)
+[![CI](https://github.com/Yekshith/zynq-dsp-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Yekshith/zynq-dsp-platform/actions/workflows/ci.yml)
 
 This is a portfolio-grade project being built and released in stages.
 
