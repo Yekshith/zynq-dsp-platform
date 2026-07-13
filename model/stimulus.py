@@ -9,12 +9,12 @@ def impulse(length: int) -> list[int]:
 	return [1] + [0] * (length - 1)
 
 
-def step(length: int) -> list[int]:
-	"""Return a unit-step sequence containing exactly length samples."""
+def step(length: int, amplitude: int = 1) -> list[int]:
+	"""Return a constant integer sequence containing exactly length samples."""
 	if length <= 0:
 		raise ValueError("length must be greater than zero")
 
-	return [1] * length
+	return [amplitude] * length
 
 
 def sine(

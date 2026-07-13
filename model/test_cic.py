@@ -80,8 +80,8 @@ def test_cic_first_step_output():
 	"""Check output timing and the first startup-transient value."""
 	cic = CICDecimator()
 
-	for _ in range(7):
-		assert cic.process_sample(1) is None
+	for sample in step(7):
+		assert cic.process_sample(sample) is None
 
 	assert cic.process_sample(1) == 120
 	assert cic.counter == 0
@@ -135,9 +135,10 @@ def test_cic_positive_full_scale_survives_internal_wrap():
 	cic = CICDecimator()
 	outputs = []
 	stage_wrapped = [False for _ in range(cic.n)]
+	input_samples = step(2048, 2047)
 
-	for _ in range(520):
-		result = cic.process_sample(2047)
+	for sample in input_samples:
+		result = cic.process_sample(sample)
 
 		for stage, state in enumerate(cic.integrators):
 			if state < 0:
@@ -148,10 +149,10 @@ def test_cic_positive_full_scale_survives_internal_wrap():
 
 	expected_steady_state = 2047 * 512
 
-	assert len(outputs) == 520 // cic.r
+	assert len(outputs) == len(input_samples) // cic.r
 	assert expected_steady_state == 1_048_064
 
-	# The first two results are the documented startup transient.
+	# The first two outputs are the defined startup transient.
 	assert outputs[2:] == [expected_steady_state] * (len(outputs) - 2)
 
 	# Positive accumulation can become negative only through signed wrapping.
@@ -163,9 +164,10 @@ def test_cic_negative_full_scale_survives_internal_wrap():
 	cic = CICDecimator()
 	outputs = []
 	stage_wrapped = [False for _ in range(cic.n)]
+	input_samples = step(2048, -2048)
 
-	for _ in range(520):
-		result = cic.process_sample(-2048)
+	for sample in input_samples:
+		result = cic.process_sample(sample)
 
 		for stage, state in enumerate(cic.integrators):
 			if state > 0:
@@ -176,10 +178,10 @@ def test_cic_negative_full_scale_survives_internal_wrap():
 
 	expected_steady_state = -2048 * 512
 
-	assert len(outputs) == 520 // cic.r
+	assert len(outputs) == len(input_samples) // cic.r
 	assert expected_steady_state == -1_048_576
 
-	# The first two results are the documented startup transient.
+	# The first two outputs are the defined startup transient.
 	assert outputs[2:] == [expected_steady_state] * (len(outputs) - 2)
 
 	# Negative accumulation can become positive only through signed wrapping.
