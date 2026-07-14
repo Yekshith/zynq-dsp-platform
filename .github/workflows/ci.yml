@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,5 +18,30 @@ jobs:
       - name: Build CI image
         run: docker build -t zynq-ci ci/
 
-      - name: Run model tests
-        run: docker run --rm -v "$PWD:/work" zynq-ci pytest model/ -v
+      - name: Run golden-model tests
+        run: |
+          docker run --rm \
+            -v "$PWD:/work" \
+            zynq-ci \
+            pytest model/ -v
+
+      - name: Run CIC RTL regression
+        run: |
+          docker run --rm \
+            -v "$PWD:/work" \
+            zynq-ci \
+            pytest tb/cocotb/test_cic_runner.py -v -s
+
+      - name: Run FIR RTL regression
+        run: |
+          docker run --rm \
+            -v "$PWD:/work" \
+            zynq-ci \
+            pytest tb/cocotb/test_fir_runner.py -v -s
+
+      - name: Run pipeline RTL regression
+        run: |
+          docker run --rm \
+            -v "$PWD:/work" \
+            zynq-ci \
+            pytest tb/cocotb/test_pipeline_runner.py -v -s

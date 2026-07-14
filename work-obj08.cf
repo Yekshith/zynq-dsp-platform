@@ -1,0 +1,13 @@
+v 4
+file . "rtl/cic_fir_pipeline.vhd" "48e26dfd59f5e5d25b3547dbdf40850bc1769c2f" "20260713181556.284":
+  entity cic_fir_pipeline at 1( 0) + 0 on 23;
+  architecture rtl of cic_fir_pipeline at 35( 767) + 0 on 24;
+file . "rtl/fir_comp.vhd" "96db306570df3e5e4390c0212bee3e506167cd80" "20260713181556.225":
+  entity fir_comp at 1( 0) + 0 on 21;
+  architecture rtl of fir_comp at 33( 621) + 0 on 22;
+file . "rtl/cic_decimator.vhd" "8c4e961b64bbe8cd2757111b7cdb93aa5a018539" "20260713181556.158":
+  entity cic_decimator at 1( 0) + 0 on 19;
+  architecture rtl of cic_decimator at 28( 600) + 0 on 20;
+file . "rtl/fir_coefficients_pkg.vhd" "c187a5232a07ccdce78a4ee4f523a7b87aabc383" "20260713181556.132":
+  package fir_coefficients_pkg at 1( 0) + 0 on 17;
+  package body fir_coefficients_pkg at 61( 1947) + 0 on 18;

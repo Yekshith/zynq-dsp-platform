@@ -14,15 +14,7 @@ def wrap_signed(value: int, width: int) -> int:
 
 
 class CICDecimator:
-	def __init__(
-		self,
-		r: int = 8,
-		n: int = 3,
-		m: int = 1,
-		input_width: int = 12,
-		internal_width: int = 21,
-		output_width: int = 21,
-	) -> None:
+	def __init__(self,r: int = 8,n: int = 3,m: int = 1,input_width: int = 12,internal_width: int = 21,output_width: int = 21) -> None:
 		if r <= 0:
 			raise ValueError("r must be greater than zero")
 
