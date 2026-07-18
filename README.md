@@ -21,7 +21,7 @@ The complete signal-processing chain is implemented as:
 
 ### Level 1: CIC–FIR DSP Pipeline
 
-**Implementation and GitHub Actions verification complete. Release tag pending.**
+**Level 1 released as `v0.1`. GitHub Actions verification is passing.**
 
 | Component                            |           Status |
 | ------------------------------------ | ---------------: |
@@ -42,7 +42,7 @@ The complete signal-processing chain is implemented as:
 | ZedBoard hardware integration        |     Future level |
 | ADC capture, AXI and DMA integration |     Future level |
 
-The Level 1 release candidate is verified. The remaining release gate is creating and pushing the annotated `v0.1` tag.
+Level 1 is released through the annotated `v0.1` tag.
 
 Requirements traceability: [`docs/requirements.md`](docs/requirements.md).
 
@@ -848,7 +848,7 @@ GitHub: [@Yekshith](https://github.com/Yekshith)
 v0.1 — Verified fixed-point CIC–FIR pipeline
 ```
 
-Current state: the Level 1 implementation, documentation, branch push, and GitHub Actions regression are complete. The annotated tag remains pending.
+Current state: the Level 1 implementation, documentation, branch push, GitHub Actions regression, and annotated `v0.1` tag are complete.
 
 The release is complete only after:
 

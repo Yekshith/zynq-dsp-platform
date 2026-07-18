@@ -110,7 +110,7 @@ At each release:
 
 | Release | Scope                                                                     | Current state                                        |
 | ------- | ------------------------------------------------------------------------- | ---------------------------------------------------- |
-| `v0.1`  | Bit-exact fixed-point CIC–FIR pipeline                                    | Implementation complete; release closure in progress |
+| `v0.1`  | Bit-exact fixed-point CIC–FIR pipeline                                    | **Released and verified**                          |
 | `v0.2`  | Async FIFO, priority arbiter, AXI-Lite regmap, SVA and VUnit              | Planned                                              |
 | `v0.3`  | ZedBoard integration, AXI DMA, C driver, FreeRTOS, ILA and timing closure | Planned                                              |
 | `v0.4`  | UDP telemetry, host plot and final demonstration                          | Planned                                              |
