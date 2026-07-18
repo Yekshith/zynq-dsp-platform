@@ -21,7 +21,7 @@ The complete signal-processing chain is implemented as:
 
 ### Level 1: CIC–FIR DSP Pipeline
 
-**Implementation and local verification complete.**
+**Implementation and GitHub Actions verification complete. Release tag pending.**
 
 | Component                            |           Status |
 | ------------------------------------ | ---------------: |
@@ -38,11 +38,13 @@ The complete signal-processing chain is implemented as:
 | FIR cocotb regression                |          Passing |
 | Pipeline cocotb regression           |          Passing |
 | Docker simulation environment        |         Complete |
-| GitHub Actions workflow              | Complete locally |
+| GitHub Actions workflow              | Passing on `main` |
 | ZedBoard hardware integration        |     Future level |
 | ADC capture, AXI and DMA integration |     Future level |
 
-The `v0.1` release will represent the verified Level 1 CIC–FIR pipeline.
+The Level 1 release candidate is verified. The remaining release gate is creating and pushing the annotated `v0.1` tag.
+
+Requirements traceability: [`docs/requirements.md`](docs/requirements.md).
 
 ---
 
@@ -845,6 +847,8 @@ GitHub: [@Yekshith](https://github.com/Yekshith)
 ```text
 v0.1 — Verified fixed-point CIC–FIR pipeline
 ```
+
+Current state: the Level 1 implementation, documentation, branch push, and GitHub Actions regression are complete. The annotated tag remains pending.
 
 The release is complete only after:
 
